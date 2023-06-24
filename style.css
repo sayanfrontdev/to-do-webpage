@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Roboto+Slab&family=Ubuntu:wght@400;500&display=swap");
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0);
+        opacity: 0;
+        background: #f0e006;
+    }
+}
+
+@media screen and (min-width: 40.5em) {
+    .product-img {
+        width: 50%;
+        float: left;
+    }
+}
+
+:root {
+    --black: rgb(0, 0, 0);
+    --blue: rgb(62, 12, 243);
+    --backgroundGreen: rgb(116, 121, 255);
+    --white: rgb(255, 255, 255);
+    --blue: rgb(21, 17, 255);
+}
+
+html {
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.column {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+body {
+    background-color: rgb(237 206 206);
+}
+
+header {
+    letter-spacing: -1px;
+    background: rgb(111, 108, 221);
+    background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+    color: black;
+    border-radius: 10px;
+    padding: 0%;
+    box-shadow: rgb(80, 78, 78) 5px 5px 20px;
+}
+
+header,
+form {
+    min-height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    border-radius: 5px;
+}
+
+form input,
+form button,
+.delete-all {
+    padding: 10px 20px;
+    margin: 1rem;
+    font-size: 2rem;
+    outline: none;
+    width: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgb(170, 169, 169) 5px 5px 20px;
+}
+
+form button:hover {
+    background: #5f4dc5;
+    color: var(--white);
+}
+
+.delete-all {
+    background-color: red;
+    color: white;
+    width: 200px;
+    margin: auto auto 1.5rem;
+}
+
+.delete-all:hover {
+    background-color: rgb(207, 2, 2);
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 40%;
+    list-style: none;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: #FFF;
+    font-size: 2rem;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    outline: none;
+    border-radius: 5px;
+    animation: expand .5s ease-in-out;
+}
+
+.main_heading h1 {
+    font-family: "Lobster", cursive;
+    font-size: 8rem;
+}
+
+.filter-todo {
+    padding: 1rem;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+    background: red;
+    color: #FFFFFF;
+    border: none;
+    padding: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.complete-btn {
+    background-color: #55acee;
+    color: #FFF;
+}
+
+.edit-btn {
+    border: none;
+    padding: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+    line-break: anywhere;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+/*CUSTOM SELECTOR */
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
+    border-radius: 5px;
+    background-color: #55acee;
+    cursor: pointer;
+}
+
+
+/* Custom Select */
+
+.select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    overflow: hidden;
+    background-color: #55acee;
+    outline: none;
+    color: #1511ff;
+    font-family: "Poppins", sans-serif;
+    width: 12rem;
+    border-radius: 5px;
+    box-shadow: rgb(170, 169, 169) 5px 5px 20px;
+}
+
+.abc {
+    display: flex;
+    flex-direction: row;
+}
+
+.todoform {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #645bae;
+    text-align: center;
+    padding: 1rem;
+    font-family: "Lobster", cursive;
+}
+
+@media only screen and (max-width: 440px) {
+    .abc {
+        flex-direction: column;
+    }
+    .todoform {
+        flex-direction: column;
+    }
+}
+
+
+/* Arrow */
+
+
+/* Transition  */
+
+.select:hover::after {
+    background-color: #f7fffe;
+    color: #1511ff;
+}
+
+
+/* Footer */
+
+.footer h3 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: #FFF;
+    height: 3.5rem;
+}
+
+.social-icon {
+    width: 4.5rem;
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.footer-desc {
+    color: white;
+    font-size: 0.9em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    color: white;
+    opacity: 1;
+    top: 1;
+    height: fit-content;
+}
+
+.true {
+    display: block;
+}
+
+.content {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    width: fit-content;
+    margin: auto;
+}
+
+.green {
+    background-color: rgb(118, 76, 165);
+}
+
+.red {
+    background-color: red;
+    border-radius: 0.25em;
+    font-family: 'Poppins';
+}
+
+.blue {
+    background-color: rgb(47, 47, 167);
+}
+
+.modal-btn {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+    border: 0.1em solid white;
+    padding: 0.02em 0.68em;
+    margin: 0 0 0.03em 0.5em;
+    border-radius: 0.25em;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.modal-btn:hover {
+    background-color: rgb(112, 112, 112);
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.todayDate {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.confirmation_box {
+    width: 700px;
+    height: 300px;
+    background: #f7fffe;
+    position: relative;
+    left: 420px;
+    bottom: 280px;
+    border-radius: 20px;
+}
+
+.optbox_header {
+    background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.confirmation_box p {
+    position: relative;
+    left: 85px;
+    top: 20px;
+    font-size: 3.4rem;
+    font-family: "Lobster", cursive;
+}
+
+.proceed {
+    background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+    height: 60px;
+    width: 180px;
+    border-radius: 10px;
+    font-family: "Lobster", cursive;
+    position: relative;
+    left: 20px;
+    box-shadow: 10px 10px 10px rgba(132, 131, 131, 0.537);
+    text-align: center;
+    line-height: 60px;
+    font-size: 2.2rem;
+}
+
+.donot_proceed {
+    background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+    height: 60px;
+    width: 180px;
+    border-radius: 10px;
+    font-family: "Lobster", cursive;
+    position: relative;
+    left: 20px;
+    box-shadow: 10px 10px 10px rgba(132, 131, 131, 0.537);
+    text-align: center;
+    line-height: 60px;
+    font-size: 2.2rem;
+}
+
+.option_box {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    position: relative;
+    left: 70px;
+    top: 50px;
+}
+
+.proceed:hover {
+    box-shadow: 10px 10px 10px rgb(132, 131, 131);
+    cursor: pointer;
+    height: 65px;
+    width: 200px;
+    font-size: 2.8rem;
+}
+
+.donot_proceed:hover {
+    box-shadow: 10px 10px 10px rgb(132, 131, 131);
+    cursor: pointer;
+    height: 65px;
+    width: 200px;
+    font-size: 2.8rem;
+}
+
+.optbox_header i {
+    font-size: 3rem;
+    color: #FFF;
+    position: relative;
+    width: 28px;
+    height: 26px;
+    border: none;
+    left: 665px;
+    top: 5px;
+}
+
+.optbox_header i:hover {
+    cursor: pointer;
+    color: black;
+}
+
+@media only screen and (max-width: 440px) {
+    .confirmation_box {
+        width: 300px;
+        height: 300px;
+        background: #f7fffe;
+        position: relative;
+        left: 30px;
+        bottom: 280px;
+        border-radius: 20px;
+    }
+    .optbox_header {
+        background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+        height: 40px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .confirmation_box p {
+        position: relative;
+        left: 5px;
+        top: 20px;
+        font-size: 2rem;
+        font-family: "Lobster", cursive;
+        text-align: center;
+    }
+    .proceed {
+        background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+        height: 60px;
+        width: 90px;
+        border-radius: 10px;
+        font-family: "Lobster", cursive;
+        position: relative;
+        left: 20px;
+        box-shadow: 10px 10px 10px rgba(132, 131, 131, 0.537);
+        text-align: center;
+        line-height: 60px;
+        font-size: 2.2rem;
+    }
+    .donot_proceed {
+        background: linear-gradient(90deg, rgb(181, 132, 241) 0%, rgb(103, 67, 231) 50%, rgb(148, 132, 241) 100%);
+        height: 60px;
+        width: 90px;
+        border-radius: 10px;
+        font-family: "Lobster", cursive;
+        position: relative;
+        left: 20px;
+        box-shadow: 10px 10px 10px rgba(132, 131, 131, 0.537);
+        text-align: center;
+        line-height: 60px;
+        font-size: 2.2rem;
+    }
+    .option_box {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        position: relative;
+        left: 0px;
+        top: 50px;
+    }
+    .proceed:hover {
+        box-shadow: 10px 10px 10px rgb(132, 131, 131);
+        cursor: pointer;
+        height: 65px;
+        width: 95px;
+        font-size: 2.8rem;
+    }
+    .donot_proceed:hover {
+        box-shadow: 10px 10px 10px rgb(132, 131, 131);
+        cursor: pointer;
+        height: 65px;
+        width: 95px;
+        font-size: 2.8rem;
+    }
+    .optbox_header i {
+        font-size: 3rem;
+        color: #FFF;
+        position: relative;
+        width: 28px;
+        height: 26px;
+        border: none;
+        left: 255px;
+        top: 5px;
+    }
+    .optbox_header i:hover {
+        cursor: pointer;
+        color: black;
+    }
+}
